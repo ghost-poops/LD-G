@@ -5,40 +5,56 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>LD GHOST</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Creepster&family=Special+Elite&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@700;900&display=swap');
 
         body {
-            background: #000000;
-            color: #ff0033;
+            background: linear-gradient(135deg, #0a0a0c 0%, #1a1c23 100%);
+            color: #00ffcc;
             font: 15px/1.5 monospace;
-            margin: 20px;
+            margin: 0;
+            padding: 20px;
+            height: 100vh;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: flex-start;
             position: relative;
-            overflow-x: hidden;
+            overflow: hidden;
         }
 
-        /* خلفية مرعبة وأنيقة تحمل اسم پێشانگای ئاسۆ */
+        /* المظهر الزجاجي في المنتصف لعبارة پێشانگای ئاسۆ */
         body::before {
             content: "پێشانگای ئاسۆ";
-            position: fixed;
+            position: absolute;
             top: 50%;
             left: 50%;
-            transform: translate(-50%, -50%) rotate(-15deg);
-            font-family: 'Creepster', cursive, sans-serif;
-            font-size: 8vw;
-            color: rgba(255, 0, 51, 0.04);
+            transform: translate(-50%, -50%);
+            font-family: 'Cairo', sans-serif;
+            font-size: 7vw;
+            font-weight: 900;
+            color: rgba(255, 255, 255, 0.03);
+            background: rgba(255, 255, 255, 0.02);
+            padding: 20px 50px;
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
             white-space: nowrap;
             z-index: -1;
             pointer-events: none;
-            text-shadow: 0 0 20px rgba(255, 0, 51, 0.1);
+            text-shadow: 0 0 30px rgba(0, 255, 204, 0.05);
+            letter-spacing: 2px;
         }
 
         #console {
             font-family: monospace;
             white-space: pre;
+            z-index: 1;
         }
         .ok   { color: #00ff66; }
-        .bad  { color: #ff0033; }
-        .warn { color: #ff9900; }
+        .bad  { color: #ff3333; }
+        .warn { color: #ffaa00; }
     </style>
     <script>
     if (window.applicationCache && window.applicationCache.status == 0) {
@@ -47,9 +63,11 @@
     </script>
 </head>
 <body>
-    LD GHOST · PS4 Exploit<br>
-    © 2026 LD GHOST<br>
-    <br>
+    <div style="z-index: 1;">
+        LD GHOST · PS4 Exploit<br>
+        © 2026 LD GHOST<br>
+        <br>
+    </div>
     <pre id="console"></pre>
 </body>
 <script>
